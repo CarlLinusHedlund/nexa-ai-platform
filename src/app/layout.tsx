@@ -1,6 +1,6 @@
+import type { Metadata } from 'next'
 'use client'
 import './globals.css'
-import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion';
