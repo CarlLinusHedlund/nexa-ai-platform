@@ -1,11 +1,11 @@
-'use client'
-
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion';
 import Loader from '../components/loader'
+
+'use client'
 
 const inter = Inter({ subsets: ['latin'] })
 
