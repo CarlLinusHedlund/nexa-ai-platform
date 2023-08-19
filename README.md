@@ -16,7 +16,7 @@ Welcome to Nexa, your ultimate destination for AI toolkits that empower users an
 
 ## Getting Started 🚀
 
-To start exploring AI toolkits with Nexa, visit our website: [www.nexa.ai](nexa-ten.vercel.app). Sign up for an account to access a world of AI possibilities. 🌐
+To start exploring AI toolkits with Nexa, visit our website: [nexa-ten.vercel.app](https://nexa-ten.vercel.app/). Sign up for an account to access a world of AI possibilities. 🌐
 
 ## Contribution 🌱
 
