@@ -31,6 +31,8 @@ Join us on the journey to revolutionize technology with the potential of AI. Vis
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+The project is still in development. And will be added with features. 
+
 
 ## Getting Started
 
