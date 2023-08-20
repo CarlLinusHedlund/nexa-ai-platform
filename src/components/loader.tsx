@@ -1,15 +1,23 @@
 'use client'
-
+import { useAnimationStore } from "@/store/loader";
 import { motion } from "framer-motion"
+
 
 
 const item = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0, transition: { duration: 1, ease: 'easeInOut', staggerChildren: 0.6 } },
-  exit: { opacity: 0, y: -10, transition: { duration: 0.5, delay: 2 } },
+  exit: { opacity: 0, y: -10, transition: { duration: 0.9, delay: 2 } },
 };
 
-export default function Loader({ setLoading } : { setLoading: any }) {
+
+export default function Loader() {
+  const { setAnimationComplete } = useAnimationStore()
+
+  const handleAnimationComplete = () => {
+    setAnimationComplete(true);
+  };
+
   return (
     <motion.div
       className='flex flex-col items-center justify-center'
@@ -17,7 +25,7 @@ export default function Loader({ setLoading } : { setLoading: any }) {
       animate='animate'
       initial='initial'
       exit='exit'
-      onAnimationComplete={() => setLoading(false)}
+      onAnimationComplete={handleAnimationComplete}
     >
       <motion.h1
         variants={item}
@@ -27,10 +35,6 @@ export default function Loader({ setLoading } : { setLoading: any }) {
       <motion.p
         variants={item}
       className="text-[#eeeeee]">AI toolkits collected in one place</motion.p>
-      <motion.p
-        variants={item}
-        className=" animate-pulse pt-6 text-[#eeeeee]">Page is Loading...
-      </motion.p>
     </motion.div>
   )
 }
