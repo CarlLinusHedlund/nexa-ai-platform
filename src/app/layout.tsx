@@ -5,14 +5,20 @@
 // }
 'use client'
 import './globals.css'
-import { Inter } from 'next/font/google'
+
+import { Poppins } from 'next/font/google'
 import { AnimatePresence, motion } from 'framer-motion';
 import Loader from '../components/loader'
 import { useAnimationStore } from '@/store/loader';
+import Navbar from '@/components/shared/navbar';
 
 
 
-const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({
+  subsets: ['latin-ext'],
+  style: 'normal',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+})
 
 
 export default function RootLayout({
@@ -25,8 +31,8 @@ export default function RootLayout({
  
   return (
     <html lang="en">
-      <body className={`${inter.className} relative body-bg `}>
-        <div className='absolute w-full h-full pattern-dots pattern-opacity-10 pattern-bg-transparent pattern-size-2 pattern-gray-100'>
+      <body className={`${poppins.className} font-poppins relative body-bg `}>
+        <div className='absolute w-full h-full -z-10 pattern-dots pattern-opacity-10 pattern-bg-transparent pattern-size-2 pattern-gray-100'>
         </div>
         <AnimatePresence mode='wait'>
           {!animationComplete ? (
@@ -34,9 +40,12 @@ export default function RootLayout({
               <Loader />
             </motion.div>
           ) : (
-            <main>
+            <>
+            <Navbar />
+            <main className='items-center justify-center w-full min-h-screen inner'>
               {children}
             </main>
+            </>
           )}
         </AnimatePresence>
       </body>

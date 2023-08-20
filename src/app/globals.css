@@ -5,3 +5,9 @@
 .body-bg {
   background: linear-gradient(200deg, #02514c 0%, #151d1c 40.99%, #171717 100%);
 }
+
+.inner {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
