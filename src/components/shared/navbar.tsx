@@ -15,10 +15,10 @@ export default function Navbar() {
   const isDesktopOrLaptop = useMediaQuery({ query: "(min-width: 768px)" })
 
   return (
-    <div className="inner ">
+    <div className="fixed top-0 left-0 right-0 mx-auto h-fit">
       {isDesktopOrLaptop && 
         <div
-        className="flex items-center w-full h-20 gap-14">
+        className="flex items-center w-full h-20 gap-14 inner">
           <motion.div
           initial={{ opacity: 0, y: 0 }}
           animate={{ opacity: 1, y: 0, transition: { duration: 1} }}
