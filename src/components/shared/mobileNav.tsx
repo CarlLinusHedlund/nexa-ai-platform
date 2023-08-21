@@ -1,4 +1,4 @@
-import { motion, useCycle, AnimatePresence } from "framer-motion"
+import { motion, useCycle, AnimatePresence, MotionConfig } from "framer-motion"
 import Link from "next/link";
 
 
@@ -40,24 +40,42 @@ export default function MobileNav() {
       </div>
     </div>
     <AnimatePresence>
-      {mobileNav && (<div className="fixed inset-0 bg-blue-600">
-          <motion.div 
+      <MotionConfig transition={{
+        type: 'spring',
+        stiffness: 80,
+        bounce: .20,
+      }}>
+        {mobileNav && (<motion.div
+          key="mobile-nav"
           variants={{
-            open: {x: '0%'},
-            closed: {x: '-100%'}
+            open: {x: '0%', transition: {when: 'beforeChildren', staggerChildren: 0.2}},
+            closed: {x: '-100%', transition: {when: 'afterChildren', staggerChildren: 0.2}}
           }}
           initial="closed"
           animate="open"
           exit='closed'
-          className="flex flex-col items-center justify-center h-full gap-4 ">
-            <Link href="/">Home</Link>
-            <Link href="/browse">Browse</Link>
-            <Link href="/faq">FAQ</Link>
-          </motion.div>
-      </div>)}
+          className="fixed inset-0 bg-gray-900 ">
+            <div className="absolute w-full h-full pattern-dots pattern-opacity-10 pattern-bg-transparent pattern-size-2 pattern-gray-100 ">
+
+            </div>
+            <motion.div 
+            variants={{
+              open: {y: '0%', opacity: 1},
+              closed: {y: '100%', opacity: 0}}}
+              className="flex flex-col  items-center justify-center w-full h-full gap-4 text-[#eeeeee] font-extrabold font-poppins text-3xl  ">
+              <motion.div className="">
+                <Link onClick={() => toggleMobileNav()} href="/">Home</Link>
+              </motion.div>
+              <motion.div>
+                <Link onClick={() => toggleMobileNav()} href="/browse">Browse</Link>
+              </motion.div>
+              <motion.div>
+                <Link onClick={() => toggleMobileNav()} href="/faq">FAQ</Link>
+              </motion.div>
+            </motion.div>
+        </motion.div>)}
+      </MotionConfig>
     </AnimatePresence>
-    
-    
     </>
   )
 }
