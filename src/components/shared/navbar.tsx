@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link"
 import { useMediaQuery } from "react-responsive"
+import MobileNav from "./mobileNav";
 
 
 const item = {
@@ -46,7 +47,7 @@ export default function Navbar() {
             </motion.span>
           </motion.div>
         </div>}
-      {isMobileOrTablet && <div>Mobile</div>}
+      {isMobileOrTablet && <MobileNav />}
     </div>
   )
 }
