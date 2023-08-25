@@ -54,7 +54,7 @@ export default function MobileNav() {
           initial="closed"
           animate="open"
           exit='closed'
-          className="fixed inset-0 bg-gray-900 ">
+          className="fixed inset-0 bg-[#171717] ">
             <div className="absolute w-full h-full pattern-dots pattern-opacity-10 pattern-bg-transparent pattern-size-2 pattern-gray-100 ">
 
             </div>

@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 
+
+
 const item = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0, transition: { duration: 1, ease: 'easeInOut', staggerChildren: 0.6 } },
@@ -11,6 +13,8 @@ const item = {
 }; 
 
 export default function Home() {
+
+
   return (
     <motion.div
       variants={item}
@@ -24,10 +28,10 @@ export default function Home() {
         </h1>
         <div className='flex flex-col gap-8 sm:flex-row'>
           <Link 
-          className=' w-full text-center sm:w-40 rounded-xl py-3 sm:py-2 border-2 border-[#11C8B2] shadow-sm  bg-[#171717] shadow-[#11C8B2] text-[#eeeeee] '
+          className=' w-full text-center sm:w-44 rounded-xl py-3 sm:py-2 border-2 border-[#11C8B2] shadow-sm  bg-[#17171790] shadow-[#11C8B2] text-[#eeeeee] '
           href="/browse">Browse Ais</Link>
           <Link 
-          className='w-full text-center sm:w-40 rounded-xl py-3 sm:py-2 border-2 border-[#eeeeee] text-[#eeeeee] '
+          className='w-full text-center sm:w-44 rounded-xl py-3 sm:py-2 border-2 border-[#eeeeee] text-[#eeeeee] '
           href="/faq">What is this?</Link>
         </div>
       </div>
