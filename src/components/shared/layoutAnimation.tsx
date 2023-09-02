@@ -22,7 +22,7 @@ export default function LayoutAnimation({
           ) : (
             <>
             <Navbar />
-            <main className='items-center justify-center w-full h-full inner'>
+            <main className='items-center justify-center w-full min-h-screen inner'>
               {children}
             </main>
             </>

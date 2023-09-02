@@ -1,9 +1,7 @@
-import { SignUp } from "@clerk/nextjs";
- 
-export default function Page() {
+ export default function Page() {
   return (
     <div className="flex items-center justify-center w-full h-screen py-20 ">
-      <SignUp />;
+      <p>sign up</p>
     </div>
   )
 }
